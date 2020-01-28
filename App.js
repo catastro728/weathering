@@ -18,11 +18,12 @@ export default class extends React.Component {
     console.log(data);
     this.setState({
       isLoading: false, 
-      temp: data.main.temp, 
+      temp: data.main.temp,
       humidity: data.main.humidity, 
       temp_max: data.main.temp_max,
       temp_min: data.main.temp_min,
       name: data.name,
+      condition: data.Weather[0].main
     });
   }
 
@@ -51,7 +52,7 @@ export default class extends React.Component {
     return isLoading ?  (
       <Loading></Loading>
     ) : (
-      <Weather temp={temp} humidity={humidity} temp_max={temp_max} temp_min={temp_min}></Weather> //Math.round()
+      <Weather temp={temp} humidity={humidity} temp_max={temp_max} temp_min={temp_min} condition={condition}></Weather> //Math.round()
     );
   }
 }

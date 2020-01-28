@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "expo": "~36.0.0",
+    "expo": "^36.0.2",
     "expo-location": "~8.0.0",
     "prop-types": "^15.7.2",
     "react": "~16.9.0",
