@@ -10,7 +10,7 @@ const API_KEY = 'c7ea5059800ee2477c4664db3a3272b1';
 export default class extends React.Component {
   state = {
     isLoading: true,
-    temp: 0
+    temp: 0,
   }
 
   getWeather = async(latitude, longitude) => {
@@ -23,7 +23,7 @@ export default class extends React.Component {
       temp_max: data.main.temp_max,
       temp_min: data.main.temp_min,
       name: data.name,
-      condition: data.Weather[0].main
+      condition: data.weather[0].main
     });
   }
 
@@ -47,12 +47,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const {isLoading, temp, humidity, temp_max, temp_min} = this.state;
+    const {isLoading, temp, humidity, temp_max, temp_min, condition, name, description} = this.state;
 
     return isLoading ?  (
       <Loading></Loading>
     ) : (
-      <Weather temp={temp} humidity={humidity} temp_max={temp_max} temp_min={temp_min} condition={condition}></Weather> //Math.round()
+      <Weather temp={temp} humidity={humidity} temp_max={temp_max} temp_min={temp_min} condition={condition} name={name} description={description}></Weather> //Math.round()
     );
   }
 }
